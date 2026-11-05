@@ -1,5 +1,5 @@
 #![allow(incomplete_features)]
-#![feature(adt_const_params, generic_const_args, generic_const_items, min_generic_const_args)]
+#![feature(adt_const_params, gca_const_items, generic_const_items, gca_min_const_items)]
 
 use diman_unit_system::unit_system_internal;
 

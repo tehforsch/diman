@@ -381,10 +381,10 @@ impl OperatorTrait {
         match (&self.lhs.type_, &self.rhs.type_) {
             (Quantity, Quantity) => match self.name {
                 Mul => {
-                    quote_spanned! {span=> ::core::direct_const_arg!(__DIMAN_DIMENSION_ADD::<DL, DR>) }
+                    quote_spanned! {span=> ::core::gca!(__DIMAN_DIMENSION_ADD::<DL, DR>) }
                 }
                 Div => {
-                    quote_spanned! {span=> ::core::direct_const_arg!(__DIMAN_DIMENSION_SUB::<DL, DR>) }
+                    quote_spanned! {span=> ::core::gca!(__DIMAN_DIMENSION_SUB::<DL, DR>) }
                 }
                 _ => existing,
             },
@@ -392,7 +392,7 @@ impl OperatorTrait {
             (Storage, Quantity) => match self.name {
                 Mul => existing,
                 Div => {
-                    quote_spanned! {span=> ::core::direct_const_arg!(__DIMAN_DIMENSION_NEG::<D>) }
+                    quote_spanned! {span=> ::core::gca!(__DIMAN_DIMENSION_NEG::<D>) }
                 }
                 _ => unreachable!(),
             },

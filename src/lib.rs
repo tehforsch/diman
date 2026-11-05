@@ -33,7 +33,7 @@
 //! While Diman provides a full definition of the SI system of units, it also fully supports defining custom systems of dimensions and units:
 //! ```
 //! # #![allow(incomplete_features)]
-//! # #![feature(adt_const_params, generic_const_args, generic_const_items, min_generic_const_args)]
+//! # #![feature(adt_const_params, gca_const_items, generic_const_items, gca_min_const_items)]
 //! # mod surround {
 //! diman::unit_system!(
 //!     quantity_type Quantity;
@@ -67,7 +67,7 @@
 //! ```
 //!
 //! # Disclaimer
-//! Diman is implemented using Rust's const generics feature. This makes for very readable error messages compared to alternatives which are typically based on `typenum`. While `min_const_generics` has been stabilized since Rust 1.51, Diman uses more complex generic expressions and therefore requires the four currently unstable features `generic_const_args`, `generic_const_items`, `min_generic_const_args`, and `adt_const_params`.
+//! Diman is implemented using Rust's const generics feature. This makes for very readable error messages compared to alternatives which are typically based on `typenum`. While `min_const_generics` has been stabilized since Rust 1.51, Diman uses more complex generic expressions and therefore requires the four currently unstable features `gca_const_items`, `generic_const_items`, `gca_min_const_items`, and `adt_const_params`.
 //!
 //! Moreover, Diman is in its early stages of development and APIs might change.
 //!
@@ -243,7 +243,7 @@
 //! As an example, consider the following macro call:
 //! ```
 //! # #![allow(incomplete_features)]
-//! # #![feature(adt_const_params, generic_const_args, generic_const_items, min_generic_const_args)]
+//! # #![feature(adt_const_params, gca_const_items, generic_const_items, gca_min_const_items)]
 //! # mod surround {
 //! diman::unit_system!(
 //!     quantity_type Quantity;
@@ -296,7 +296,7 @@
 //! For example
 //! ```
 //! # #![allow(incomplete_features)]
-//! # #![feature(adt_const_params, generic_const_args, generic_const_items, min_generic_const_args)]
+//! # #![feature(adt_const_params, gca_const_items, generic_const_items, gca_min_const_items)]
 //! # mod surround {
 //! # diman_unit_system::unit_system!(
 //! # quantity_type Quantity;
@@ -316,7 +316,7 @@
 //! Unit aliases can automatically be generated with the `#[alias(...)]` macro. For example
 //! ```
 //! # #![allow(incomplete_features)]
-//! # #![feature(adt_const_params, generic_const_args, generic_const_items, min_generic_const_args)]
+//! # #![feature(adt_const_params, gca_const_items, generic_const_items, gca_min_const_items)]
 //! # mod surround {
 //! # diman_unit_system::unit_system!(
 //! # quantity_type Quantity;
@@ -428,9 +428,9 @@
     feature = "si",
     feature(
         adt_const_params,
-        generic_const_args,
+        gca_const_items,
         generic_const_items,
-        min_generic_const_args
+        gca_min_const_items
     )
 )]
 
@@ -462,7 +462,7 @@ pub mod si;
 /// 5. `unit`: Define a new unit. If no expression is given and the `#[base(...)]` attribute is set, it will be the base unit for the given dimension. Example:
 /// ```
 /// # #![allow(incomplete_features)]
-/// # #![feature(adt_const_params, generic_const_args, generic_const_items, min_generic_const_args)]
+/// # #![feature(adt_const_params, gca_const_items, generic_const_items, gca_min_const_items)]
 /// # mod surround {
 /// # use diman_unit_system::unit_system;
 /// # unit_system!(
@@ -478,7 +478,7 @@ pub mod si;
 /// Derived units can be defined via expressions, such as
 /// ```
 /// # #![allow(incomplete_features)]
-/// # #![feature(adt_const_params, generic_const_args, generic_const_items, min_generic_const_args)]
+/// # #![feature(adt_const_params, gca_const_items, generic_const_items, gca_min_const_items)]
 /// # mod surround {
 /// # use diman_unit_system::unit_system;
 /// # unit_system!(
@@ -495,7 +495,7 @@ pub mod si;
 /// Unit statements may optionally be annotated with their resulting dimension to prevent bugs:
 /// ```
 /// # #![allow(incomplete_features)]
-/// # #![feature(adt_const_params, generic_const_args, generic_const_items, min_generic_const_args)]
+/// # #![feature(adt_const_params, gca_const_items, generic_const_items, gca_min_const_items)]
 /// # mod surround {
 /// # use diman_unit_system::unit_system;
 /// # unit_system!(
@@ -517,7 +517,7 @@ pub mod si;
 /// Example usage:
 /// ```
 /// # #![allow(incomplete_features)]
-/// # #![feature(adt_const_params, generic_const_args, generic_const_items, min_generic_const_args)]
+/// # #![feature(adt_const_params, gca_const_items, generic_const_items, gca_min_const_items)]
 /// # mod surround {
 /// # use diman_unit_system::unit_system;
 /// unit_system!(

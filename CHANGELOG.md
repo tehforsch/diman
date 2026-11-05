@@ -1,3 +1,7 @@
+# Unreleased
+## Breaking changes
+- Require a nightly with the renamed generic const argument features. Custom unit systems now require `gca_const_items` and `gca_min_const_items` in place of `generic_const_args` and `min_generic_const_args`.
+
 # v0.6.0
 ## Breaking changes
 - Replace `generic_const_exprs` with Rust's new generic const arguments features. Custom unit systems now require `adt_const_params`, `generic_const_args`, `generic_const_items`, and `min_generic_const_args` on nightly Rust.
