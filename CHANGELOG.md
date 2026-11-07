@@ -1,6 +1,6 @@
-# Unreleased
+# v0.7.0
 ## Breaking changes
-- Require a nightly with the renamed generic const argument features. Custom unit systems now require `gca_const_items` and `gca_min_const_items` in place of `generic_const_args` and `min_generic_const_args`.
+- Use newer version of Rust's generic const features. Custom unit systems now require `gca_const_items` and `gca_min_const_items` instead of `generic_const_args` and `min_generic_const_args`. These features require rust nightly 1.100.0 at minimum. (See #101)
 
 # v0.6.0
 ## Breaking changes
