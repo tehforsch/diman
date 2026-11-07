@@ -24,7 +24,7 @@ impl Codegen {
             impl<const DL: Dimension, const DR: Dimension, const FL: Magnitude, const FR: Magnitude>
                 Mul<Unit<DR, FR>> for Unit<DL, FL>
             {
-                type Output = RuntimeUnit<::core::direct_const_arg!(__DIMAN_DIMENSION_ADD::<DL, DR>)>;
+                type Output = RuntimeUnit<::core::gca!(__DIMAN_DIMENSION_ADD::<DL, DR>)>;
                 fn mul(self, _: Unit<DR, FR>) -> Self::Output {
                     RuntimeUnit( FL.mul(FR) )
                 }
@@ -34,7 +34,7 @@ impl Codegen {
             impl<const DL: Dimension, const DR: Dimension, const FL: Magnitude, const FR: Magnitude>
                 Div<Unit<DR, FR>> for Unit<DL, FL>
             {
-                type Output = RuntimeUnit<::core::direct_const_arg!(__DIMAN_DIMENSION_SUB::<DL, DR>)>;
+                type Output = RuntimeUnit<::core::gca!(__DIMAN_DIMENSION_SUB::<DL, DR>)>;
                 fn div(self, _: Unit<DR, FR>) -> Self::Output {
                     RuntimeUnit( FL.div(FR) )
                 }
@@ -46,7 +46,7 @@ impl Codegen {
             where
                 S: Mul<Magnitude, Output = S>,
             {
-                type Output = Quantity<S, ::core::direct_const_arg!(__DIMAN_DIMENSION_ADD::<DL, DR>)>;
+                type Output = Quantity<S, ::core::gca!(__DIMAN_DIMENSION_ADD::<DL, DR>)>;
                 fn mul(self, x: Quantity<S, DR>) -> Self::Output {
                     Quantity(x.value_unchecked() * FL)
                 }
@@ -58,7 +58,7 @@ impl Codegen {
             where
                 S: Mul<Magnitude, Output = S>,
             {
-                type Output = Quantity<S, ::core::direct_const_arg!(__DIMAN_DIMENSION_ADD::<DL, DR>)>;
+                type Output = Quantity<S, ::core::gca!(__DIMAN_DIMENSION_ADD::<DL, DR>)>;
                 fn mul(self, _: Unit<DR, FR>) -> Self::Output {
                     Quantity(self.value_unchecked() * FR)
                 }
@@ -70,7 +70,7 @@ impl Codegen {
             where
                 S: Div<Magnitude, Output = S>,
             {
-                type Output = Quantity<S, ::core::direct_const_arg!(__DIMAN_DIMENSION_SUB::<DL, DR>)>;
+                type Output = Quantity<S, ::core::gca!(__DIMAN_DIMENSION_SUB::<DL, DR>)>;
                 fn div(self, x: Quantity<S, DR>) -> Self::Output {
                     Quantity(x.value_unchecked() / FL)
                 }
@@ -82,7 +82,7 @@ impl Codegen {
             where
                 S: Div<Magnitude, Output = S>,
             {
-                type Output = Quantity<S, ::core::direct_const_arg!(__DIMAN_DIMENSION_SUB::<DL, DR>)>;
+                type Output = Quantity<S, ::core::gca!(__DIMAN_DIMENSION_SUB::<DL, DR>)>;
                 fn div(self, _: Unit<DR, FR>) -> Self::Output {
                     Quantity(self.value_unchecked() / FR)
                 }
@@ -103,7 +103,7 @@ impl Codegen {
             where
                 S: Mul<Magnitude, Output = S>,
             {
-                type Output = Quantity<S, ::core::direct_const_arg!(__DIMAN_DIMENSION_ADD::<DL, DR>)>;
+                type Output = Quantity<S, ::core::gca!(__DIMAN_DIMENSION_ADD::<DL, DR>)>;
                 fn mul(self, x: Quantity<S, DR>) -> Self::Output {
                     Quantity(x.value_unchecked() * self.0)
                 }
@@ -115,7 +115,7 @@ impl Codegen {
             where
                 S: Mul<Magnitude, Output = S>,
             {
-                type Output = Quantity<S, ::core::direct_const_arg!(__DIMAN_DIMENSION_ADD::<DL, DR>)>;
+                type Output = Quantity<S, ::core::gca!(__DIMAN_DIMENSION_ADD::<DL, DR>)>;
                 fn mul(self, unit: RuntimeUnit<DR>) -> Self::Output {
                     Quantity(self.value_unchecked() * unit.0)
                 }
@@ -127,7 +127,7 @@ impl Codegen {
             where
                 S: Div<Magnitude, Output = S>,
             {
-                type Output = Quantity<S, ::core::direct_const_arg!(__DIMAN_DIMENSION_SUB::<DL, DR>)>;
+                type Output = Quantity<S, ::core::gca!(__DIMAN_DIMENSION_SUB::<DL, DR>)>;
                 fn div(self, x: Quantity<S, DR>) -> Self::Output {
                     Quantity(x.value_unchecked() / self.0)
                 }
@@ -139,7 +139,7 @@ impl Codegen {
             where
                 S: Div<Magnitude, Output = S>,
             {
-                type Output = Quantity<S, ::core::direct_const_arg!(__DIMAN_DIMENSION_SUB::<DL, DR>)>;
+                type Output = Quantity<S, ::core::gca!(__DIMAN_DIMENSION_SUB::<DL, DR>)>;
                 fn div(self, unit: RuntimeUnit<DR>) -> Self::Output {
                     Quantity(self.value_unchecked() / unit.0)
                 }

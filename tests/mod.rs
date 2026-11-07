@@ -1,9 +1,9 @@
 #![allow(incomplete_features)]
 #![feature(
     adt_const_params,
-    generic_const_args,
+    gca_const_items,
     generic_const_items,
-    min_generic_const_args
+    gca_min_const_items
 )]
 
 pub mod example_system;
